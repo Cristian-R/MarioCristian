@@ -22,6 +22,8 @@ game.PlayerEntity = me.Entity.extend({
     this.renderable.setCurrentAnimation("idle");
     this.renderable.addAnimation("smallWalk", [8, 9, 10, 11, 12, 13], 80);
     this.body.setVelocity(5, 20);
+    
+    me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     },
     
     update:function(delta){
