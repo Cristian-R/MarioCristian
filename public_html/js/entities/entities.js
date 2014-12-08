@@ -15,7 +15,7 @@ game.PlayerEntity = me.Entity.extend({
  
       this.body.update("delta");
        
-        me.collision.check(this, true, this.collideMandler.bind(this), true); 
+        me.collision.check(this, true, this.collideHandler.bind(this), true); 
  
     this.renderable.addAnimation("idle", [3]);
  
@@ -36,7 +36,7 @@ game.PlayerEntity = me.Entity.extend({
       
             
      this.body.update(delta);
-     me.collision.check(this, true, this.collideMandler.bind(this), true);
+     me.collision.check(this, true, this.collideHandler.bind(this), true);
     
       if(this.body.vel.x !== 0){
       if(!this.renderable.isCurrentAnimation("smallWalk") ){
@@ -51,7 +51,7 @@ game.PlayerEntity = me.Entity.extend({
       this._super(me.Entity, "update", [delta]);
       return true;
       },
-    collideMandler: function(response){
+    collideHandler: function(response){
         
     }
         
