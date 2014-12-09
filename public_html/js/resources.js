@@ -4,6 +4,7 @@ game.resources = [
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
+        //these are like our recources that act as a registration for code
         {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},  
         {name: "mario", type:"image", src: "data/img/player1.png"},
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
@@ -18,6 +19,7 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.tmx"},
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
+        //makes  the code know about the different levels in tiled 
         {name: "level04", type: "tmx", src: "data/map/level04.tmx"},
         {name: "level05", type: "tmx", src: "data/map/level05.tmx"}
 

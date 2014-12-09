@@ -18,14 +18,14 @@ game.PlayerEntity = me.Entity.extend({
         me.collision.check(this, true, this.collideHandler.bind(this), true); 
  
     this.renderable.addAnimation("idle", [3]);
- 
+    //makes the mario walk
     this.renderable.setCurrentAnimation("idle");
     this.renderable.addAnimation("smallWalk", [8, 9, 10, 11, 12, 13], 80);
     this.body.setVelocity(5, 20);
-    
+    //is like a camera that follows mario 
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     },
-    
+    //makes tthe mario move
     update:function(delta){
       if(me.input.isKeyPressed('right')){
           this.body.vel.x += this.body.accel.x * me.timer.tick;
@@ -65,7 +65,7 @@ game.PlayerEntity = me.Entity.extend({
          this.xSpawn = settings.xSpawn;
          this.ySpawn = settings.ySpawn;
      },
-     
+     //checks if mario hit the door
      onCollision:function(){
          this.body.setCollisionMask(me.collision.types.NO_OBJECT);
          me.levelDirector.loadLevel(this.level);

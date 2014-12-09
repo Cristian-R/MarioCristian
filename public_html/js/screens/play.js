@@ -7,7 +7,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		game.data.score = 0;
                 
                 me.levelDirector.loadLevel("level04");
-        
+                //chooses where the player restarts once it makes it to the next level
                 this.resetPlayer(0, 400);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
@@ -26,7 +26,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		me.game.world.removeChild(this.HUD);
 	},
         
-        
+        //resets the location of the player
         resetPlayer: function(x, y){
          var player = me.pool.pull("mario", x, y, {});
                 me.game.world.addChild(player, 5);  
