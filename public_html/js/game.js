@@ -40,6 +40,7 @@ var game = {
 	// Run on game resources loaded
 	"loaded" : function () {
             me.pool.register("mario", game.PlayerEntity, true);
+            me.pool.register("slime", game.BadGuy);
             
             me.pool.register("levelTrigger", game.LevelTrigger);
                 //tells us where to start the game
@@ -47,7 +48,7 @@ var game = {
 		me.state.set(me.state.PLAY, new game.PlayScreen());
                    
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
                 //I SET IT TO PLAY SCREEN ON PURPOSE CAUSE I COULDNT GET THE START SCREEN TO WORK
 	}
 };
